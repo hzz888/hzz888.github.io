@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hzz</title>
+  
+  <subtitle>Make Epic Shit.</subtitle>
+  <link href="https://hzz888.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://hzz888.github.io/"/>
+  <updated>2021-01-26T13:41:00.409Z</updated>
+  <id>https://hzz888.github.io/</id>
+  
+  <author>
+    <name>hzz</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构复习</title>
+    <link href="https://hzz888.github.io/2020/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://hzz888.github.io/2020/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-12-14T09:51:18.972Z</published>
+    <updated>2021-01-26T13:41:00.409Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据结构复习（第一轮）"><a href="#数据结构复习（第一轮）" class="headerlink" title="数据结构复习（第一轮）"></a>数据结构复习（第一轮）</h1><h2 id="摘抄笔记"><a href="#摘抄笔记" class="headerlink" title="摘抄笔记"></a>摘抄笔记</h2><h3 id="关于指针变量"><a href="#关于指针变量" class="headerlink" title="关于指针变量"></a>关于指针变量</h3><p>*a :在定义变量时表示的是一个指针类型的变量，而在代码中（执行部分）则表示取出该指针所指向内容的值。<br><em>&amp;a:通常用于函数的传值，表示传入指针本身，不作复制。</em></p><p>*a作为参数传入，那么在函数中便可以对a所指向的内存空间的值指直接进行修改；*&amp;a作为参数传入，我们可以对指针本身这个数据，以及它所指向的数据进行修改。</p><p>实参通常是通过值传递给函数的，这意味着形参接收的只是发送给它们的值的副本，它们存储在函数的本地内存中。对形参值进行的任何更改都不会影响原始实参的值。</p><p>然而，有时候可能会希望一个函数能够改变正在调用中的函数（即调用它的函数）中的一个值，这可以通过引用传递的方式来完成。</p><p>变量是可以保存数据的内存位置的名称。当使用变量时，实际上就是访问存储在分配给它的内存位置的数据。引用变量是变量的另一个别名，它没有自己的存储数据的内存位置，它访问的是另一个变量的内存位置。对引用变量作出的任何更改，实际上都是对它所引用的变量内存位置中存储数据的更改。</p><p>当使用引用变量作为形参时，它将变为实参列表中相应变量的别名，对形参进行的任何更改都将真正更改正在调用它的函数中的变量。当以这种方式将数据传递给形参时，该实参被称为按引用传递。</p><p>引用变量的定义方法和常规变量类似，但是其数据类型和名称之间有一个 <code>&amp;</code> 符号。</p><p>1、值传递</p><p>  实参是变量，表达式等值。</p><p>  find（int x）{}</p><p>  y= find(z)；</p><p>  上面的例子中，z是实参，x是形参。x变z不变。</p><p>  在值传递过程中，实参和形参位于内存中两个不同地址中，实参先自己复制一次拷贝，再把拷贝复制给形参。所以，在值传递过程中，形参的变化不会对实参有任何的影响。</p><p>2、地址传递（也称引用传递）</p><p>  实参是指针。</p><p>  在函数调用的时候，实参传递给你的是指针地址，地址一样也就意味着实参和形参是一样的，当你的形参发生改变时，实参也会发生改变。</p><p>  find（int &amp;x）{}</p><p>  y= find(z)；</p><p>  上面的例子中，z是实参，x是形参。z随x而改变。</p><p>3、const引用传递</p><p>  find（const int &amp;x）{}</p><p>  y= find(z)；</p><p>  上面的例子中，z是实参，x是形参。z不随x而改变。</p><h3 id="关于main函数参数"><a href="#关于main函数参数" class="headerlink" title="关于main函数参数"></a>关于main函数参数</h3><p>一般的main函数都是不带参数的，因此main 后的括号都是空括号。实际上，main函数可以带参数，这个参数可以认为是 main函数的形式参数。Ｃ语言规定main函数的参数只能有两个， 习惯上这两个参数写为argc和argv。因此，main函数的函数头可写为： main (argc,argv) Ｃ语言还规定argc(第一个形参)必须是整型变量,argv( 第二个形参)必须是指向字符串的指针数组。加上形参说明后，main函数的函数头可以写为：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main (<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span><br></pre></td></tr></table></figure><h3 id="关于数组长度计算"><a href="#关于数组长度计算" class="headerlink" title="关于数组长度计算"></a>关于数组长度计算</h3><p>int n = sizeof(a) / sizeof(type);     //n即为数组a长度</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数据结构复习（第一轮）&quot;&gt;&lt;a href=&quot;#数据结构复习（第一轮）&quot; class=&quot;headerlink&quot; title=&quot;数据结构复习（第一轮）&quot;&gt;&lt;/a&gt;数据结构复习（第一轮）&lt;/h1&gt;&lt;h2 id=&quot;摘抄笔记&quot;&gt;&lt;a href=&quot;#摘抄笔记&quot; class=&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://hzz888.github.io/2020/11/24/hello-world/"/>
+    <id>https://hzz888.github.io/2020/11/24/hello-world/</id>
+    <published>2020-11-24T11:38:05.604Z</published>
+    <updated>2020-11-24T11:38:05.605Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
